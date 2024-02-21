@@ -1,14 +1,17 @@
 package beans.log4jnuestro;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 
 public class CalculadoraLog {
 	
 	//@Qualifier ("logetafe")
 	@Autowired
 	private LogGetafe lgt;
+	
+	@Value("3")
 	private int operador1;
+	@Value("7")
 	private int operador2;
 	
 	
