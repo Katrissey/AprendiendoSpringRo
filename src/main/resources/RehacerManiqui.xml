@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+ 
+ 	<bean id="pantalon1" class="beans.rehacermaniqui.Pantalon">
+ 		<constructor-arg value="1234"  index="0"/>
+ 		<constructor-arg value="Rojo" index="1"/>
+ 		<constructor-arg value="M" index="2"/>
+ 		<constructor-arg value="23.5" index="3"/>
+ 		<property name="boton" ref="boton1"/>
+ 			
+	</bean>
+	
+	<bean id="pantalon2" class="beans.rehacermaniqui.Pantalon">
+ 		<constructor-arg value="2345"  index="0"/>
+ 		<constructor-arg value="amarillo" index="1"/>
+ 		<constructor-arg value="S" index="2"/>
+ 		<constructor-arg value="22.25" index="3"/>
+ 		<property name="boton" ref="boton2"/>
+ 			
+	</bean>
+	
+	<bean id="camisa1" class="beans.rehacermaniqui.Camisa">
+ 		<constructor-arg value="1234"  index="0"/>
+ 		<constructor-arg value="Blanca" index="1"/>
+ 		<constructor-arg value="M" index="2"/>
+ 		<constructor-arg value="15.5" index="3"/>
+ 		<property name="botones">
+ 				<set>
+ 						<ref bean="boton3"/>
+ 						<ref bean="boton4"/>
+ 						<ref bean="boton5"/>
+ 				
+ 				</set>
+ 		</property>
+ 			
+	</bean>
+	
+	<bean id="camisa2" class="beans.rehacermaniqui.Camisa">
+ 		<constructor-arg value="2345"  index="0"/>
+ 		<constructor-arg value="Verde" index="1"/>
+ 		<constructor-arg value="L" index="2"/>
+ 		<constructor-arg value="19.95" index="3"/>
+ 		<property name="botones">
+ 				<set>
+ 						<ref bean="boton6"/>
+ 						<ref bean="boton7"/>
+ 				</set>
+ 		</property>
+ 			
+	</bean>
+	
+	<bean id="maniqui1" class="beans.rehacermaniqui.Maniqui">
+		<constructor-arg value="22222" index="0"/>
+		<constructor-arg ref="pantalon1"/>
+		<constructor-arg ref="camisa1"/>
+	
+	</bean>
+	
+	<bean id="maniqui2" class="beans.rehacermaniqui.Maniqui">
+		<constructor-arg value="33333" index="0"/>
+		<constructor-arg ref="pantalon2"/>
+		<constructor-arg ref="camisa2"/>
+	
+	</bean>
+	
+	<bean id="boton1" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="1111" index="0"/>
+		<constructor-arg value="redondo" index="1"/>
+		<constructor-arg value="negro" index="2"/>
+		<constructor-arg value="grande" index="3"/>
+	</bean>
+	
+	<bean id="boton2" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="2222" index="0"/>
+		<constructor-arg value="cuadrado" index="1"/>
+		<constructor-arg value="verde" index="2"/>
+		<constructor-arg value="pequeño" index="3"/>
+	</bean>
+	
+	<bean id="boton3" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="3333" index="0"/>
+		<constructor-arg value="triangular" index="1"/>
+		<constructor-arg value="azul" index="2"/>
+		<constructor-arg value="mediano" index="3"/>
+	</bean>
+	
+	<bean id="boton4" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="4444" index="0"/>
+		<constructor-arg value="ovalado" index="1"/>
+		<constructor-arg value="rosa" index="2"/>
+		<constructor-arg value="grande" index="3"/>
+	</bean>
+	
+	<bean id="boton5" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="5555" index="0"/>
+		<constructor-arg value="rectangular" index="1"/>
+		<constructor-arg value="dorado" index="2"/>
+		<constructor-arg value="minimalista" index="3"/>
+	</bean>
+	
+	<bean id="boton6" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="6666" index="0"/>
+		<constructor-arg value="esférico" index="1"/>
+		<constructor-arg value="plateado" index="2"/>
+		<constructor-arg value="enorme" index="3"/>
+	</bean>
+	
+	<bean id="boton7" class="beans.rehacermaniqui.Boton">
+		<constructor-arg value="7777" index="0"/>
+		<constructor-arg value="cubo" index="1"/>
+		<constructor-arg value="morado" index="2"/>
+		<constructor-arg value="único" index="3"/>
+	</bean>
+
+ </beans>
