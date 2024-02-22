@@ -12,8 +12,6 @@ public class LogGetafe {
 	@Value ("4")
 	private int nivelLog;
 	
-	
-
 	/**
 	 * 
 	 */
@@ -49,37 +47,37 @@ public class LogGetafe {
 	}
 	
 	public void trace (String msg) {
-		if (nivelLog>=0) {
+		if (0>=nivelLog) {
 			System.out.println ("trace " + msg);
 		}
 	}
 	
 	public void debug (String msg) {
-		if (nivelLog>=1) {
+		if (1>=nivelLog) {
 			System.out.println ("debug " + msg);
 		}
 	}
 	
 	public void info (String msg) {
-		if (nivelLog>=2) {
+		if (2>=nivelLog) {
 			System.out.println ("info " + msg);
 			}
 	}
 	
 	public void warning (String msg) {
-		if (nivelLog>=3) {
+		if (3>=nivelLog) {
 			System.out.println ("warning " + msg);
 			}
 	}
 	
 	public void error (String msg) {
-		if (nivelLog>=4) {
+		if (4>=nivelLog) {
 			System.out.println ("error " + msg);
 			}
 	}
 	
 	public void fatal (String msg) {
-		if (nivelLog>=5) {
+		if (5>=nivelLog) {
 			System.out.println ("fatal " + msg);
 			}
 	}

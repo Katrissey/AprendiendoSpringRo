@@ -2,10 +2,15 @@ package beans.log4jnuestro;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component("cl")
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class CalculadoraLog {
 	
-	//@Qualifier ("logetafe")
+	//@Qualifier ("logetafe") no es imprescindible para la inyección, lo que sí lo es, es el autowired, el Qualifier es para especificar cuál de los objetos creados queremos que se inyecte
 	@Autowired
 	private LogGetafe lgt;
 	
@@ -13,9 +18,7 @@ public class CalculadoraLog {
 	private int operador1;
 	@Value("7")
 	private int operador2;
-	
-	
-	
+			
 	/**
 	 * 
 	 */
@@ -27,9 +30,8 @@ public class CalculadoraLog {
 	 * @param operador1
 	 * @param operador2
 	 */
-	public CalculadoraLog(LogGetafe lgt, int operador1, int operador2) {
-		super();
-		this.lgt = lgt;
+	public CalculadoraLog(int operador1, int operador2) {
+//	No es para nada necesario añadir el atributo "ltg", directamente se inyecta llamando al Set y al constructor vacío
 		this.operador1 = operador1;
 		this.operador2 = operador2;
 	}
@@ -76,8 +78,13 @@ public class CalculadoraLog {
 	}
 	
 	public void sumar () {
+		lgt.trace("El resultado es " + (operador1 + operador2));
+		lgt.debug("El resultado es " + (operador1 + operador2));
+		lgt.info("El resultado es " + (operador1 + operador2));
 		lgt.warning("El resultado es " + (operador1 + operador2));
 		lgt.error("El resultado es " + (operador1 + operador2));
+		lgt.fatal("El resultado es " + (operador1 + operador2));
+
 	}
 
 }

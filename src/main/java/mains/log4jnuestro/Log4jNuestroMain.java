@@ -10,7 +10,7 @@ public class Log4jNuestroMain {
 	public static void main(String[] args) {
 		ApplicationContext context = new ClassPathXmlApplicationContext("Log4jNuestro.xml");
 
-		CalculadoraLog cl = (CalculadoraLog)context.getBean("calculadoraLog");
+		CalculadoraLog cl = (CalculadoraLog)context.getBean("cl");
 		cl.sumar();
 		
 	}

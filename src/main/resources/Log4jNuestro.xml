@@ -9,19 +9,22 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.sprin
 	<context:annotation-config/>
 	
 	<!-- Se obliga a escanear las clase de los paquetes y sus subpaquetes para que busque sus anotaciones-->
-	<context:component-scan base-package="spring.anotaciones"></context:component-scan>
+	<context:component-scan base-package="beans.log4jnuestro"></context:component-scan>
 
-	<bean id="logetafe" class="beans.log4jnuestro.LogGetafe">
+	<!-- <bean id="logetafe" class="beans.log4jnuestro.LogGetafe">
 		<property name="nivelLog" value="3" />
 	</bean>
-	
+	 -->
 	<!-- Al realizar la anotación @Autowired en el bean/pojo de CalculadoraLog,
 	se crea automáticamente el atributo lgt de la clase LogGetafe y se inyecta en
 	el objeto cl de la clase CalculadoraLog cuando se crea éste, por eso,
 	en este bean NO HAY QUE AÑADIR EL ATRIBUTO lgt, PORQUE YA EXISTE Y
 	ESTÁ INYECTADO-->
-	<bean id="calculadoraLog" class="beans.log4jnuestro.CalculadoraLog">
+	<!-- <bean id="calculadoraLog" class="beans.log4jnuestro.CalculadoraLog">
 		<property name="operador1" value="2"/>
 		<property name="operador2" value="5"/>
-	</bean>
+		NO es necesario poner los valores de cada atributo aquí salvo que se quieran cambiar
+		respecto a los valores predeterminados que hemos puesto con anotaciones de Spring
+		en el bean/pojo CalculadoraLog
+	</bean> -->
 </beans>
