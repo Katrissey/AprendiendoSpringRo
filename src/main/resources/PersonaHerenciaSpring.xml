@@ -1,7 +1,15 @@
-<?xml version="1.0" encoding="UTF-8"?> 
- <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd"> 
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xmlns:context="http://www.springframework.org/schema/context" 
+xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+ http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+ 		
+ 		<context:annotation-config/>
+ 		
+ 		<!-- Hay que especificar el paquete del que queremos sí o sí que lea las anotaciones. En este caso, donde se encuentra la clase LogGetafe, ya que las @Autowired las va a implementar igualmente, no es necesario especificar el paquete -->
+ 		<context:component-scan base-package="beans.log4jnuestro"></context:component-scan>
  
-	<bean id="generoFemenino" abstract="true"> 
+	<bean id="generoFemenino" abstract="true"> <!-- No podemos crear objetos de las abastractoas pero sí heredar de ellas -->
 		<property name="genero" value="femenino"/>
 	</bean>
 	
@@ -9,16 +17,32 @@
 		<property name="genero" value="masculino"/>
 	</bean>
 	
-	<bean id="Laura" class="beans.herencia.persona.Persona" parent="generoFemenino">
-		<property name="nombre" value="Laura"/>
+	<bean id="Laura" class="beans.herencia.persona.Persona" scope= "prototype" parent="generoFemenino">
+		<property name="nombre" value="Laura"/> <!--Puede utilizarse property o constructor-arg -->
 		<property name="apellidos" value="Rodríguez González"/>
 		<property name="dni" value="27896453A"/>
+		<property name="tipoSuscripcion" value="basic"/>
 	</bean>
 	
-	<bean id="Antonio" class="beans.herencia.persona.Persona" parent="generoMasculino">
+	<bean id="Antonio" class="beans.herencia.persona.Persona" scope= "prototype" parent="generoMasculino">
 		<property name="nombre" value="Antonio"/>
 		<property name="apellidos" value="Fernández Ordóñez"/>
 		<property name="dni" value="83724650V"/>
+		<property name="tipoSuscripcion" value="premium"/>
+	</bean>
+	
+	<bean id="ServicioPrensa" class="beans.herencia.persona.ServicioPrensa"  lazy-init="true"> 
+		<property name="periodicos">
+			<list>
+				<value>20 Minutos</value>
+				<value>as</value>
+				<value>El Mundo</value>
+				<value>El País</value>
+				<value>Diario 16</value>
+				<value>ABC</value>
+			</list>
+		
+		</property>
 	</bean>
 	
  </beans>

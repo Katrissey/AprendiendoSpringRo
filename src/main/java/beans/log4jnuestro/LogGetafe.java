@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class LogGetafe {
 	
-	@Value ("4")
+	@Value ("0")
 	private int nivelLog;
 	
 	/**

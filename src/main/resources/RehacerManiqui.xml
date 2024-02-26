@@ -29,7 +29,9 @@
  						<ref bean="boton3"/>
  						<ref bean="boton4"/>
  						<ref bean="boton5"/>
- 				
+ 				<!--se utiliza "ref bean=" para cuando se construye la colección
+ 				a base de objetos creados en el propio xml, pero si es directamente
+ 				con strings, se mede el valor entre "<value></value>"-->
  				</set>
  		</property>
  			
