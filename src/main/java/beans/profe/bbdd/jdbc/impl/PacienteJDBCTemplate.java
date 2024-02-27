@@ -9,10 +9,10 @@ import org.springframework.jdbc.core.namedparam.BeanPropertySqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jdbc.core.namedparam.SqlParameterSource;
 
-import spring.bbdd.jdbc.PacienteRowCallbackHandler;
-import spring.bbdd.jdbc.dao.IPacienteDao;
-import spring.bbdd.jdbc.mapper.PacienteMapper;
-import spring.bbdd.jdbc.pojos.Paciente;
+import beans.profe.bbdd.jdbc.PacienteRowCallbackHandler;
+import beans.profe.bbdd.jdbc.dao.IPacienteDao;
+import beans.profe.bbdd.jdbc.mapper.PacienteMapper;
+import beans.profe.bbdd.jdbc.pojos.Paciente;
 
 public class PacienteJDBCTemplate implements IPacienteDao {
 	 

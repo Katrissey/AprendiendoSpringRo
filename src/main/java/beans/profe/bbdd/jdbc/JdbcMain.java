@@ -8,6 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import beans.profe.bbdd.jdbc.impl.PacienteJDBCTemplate;
 import beans.profe.bbdd.jdbc.pojos.Paciente;
 
+
 public class JdbcMain {
 	
 	/**
