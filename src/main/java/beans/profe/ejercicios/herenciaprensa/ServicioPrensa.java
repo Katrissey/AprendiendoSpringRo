@@ -2,8 +2,12 @@ package beans.profe.ejercicios.herenciaprensa;
 
 import java.util.List;
 
-public class ServicioPrensa {
+import beans.herencia.persona.entities.Personae;
 
+public class ServicioPrensa {
+	
+	
+	private Personae personae;
 	private List<String> periodicos;
 
 	public ServicioPrensa(List<String> periodicos) {

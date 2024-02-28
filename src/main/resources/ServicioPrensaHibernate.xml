@@ -19,20 +19,37 @@
     <property name="dataSource" ref="dataSource"/>
     <property name="annotatedClasses">
         <list>
-            <value>spring.bbdd.hibernate.entities.PersonaEntity</value>
+            <value>beans.herencia.persona.entities.Personae</value>
         </list>
     </property>
     <property name="hibernateProperties">
         <props>
             <prop key="hibernate.hbm2ddl.auto">create</prop>
             <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
-            <prop key="hibernate.show_sql">false</prop>
+            <prop key="hibernate.show_sql">true</prop>
         </props>
     </property>
 </bean>
 
-<bean id="command" class="spring.bbdd.hibernate.impl.UsuarioCommand">
-	<property name="sessionFactory" ref="sessionFactory"/>
+<bean id="command" class="beans.herencia.persona.impl.PersonaCommand">
+<!-- 	<property name="sessionFactory" ref="sessionFactory"/> -->
 </bean>
+
+<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<constructor-arg ref="sessionFactory"></constructor-arg>
+	</bean>	
+	
+ <bean id="servicioPrensa" class="beans.profe.ejercicios.herenciaprensa.ServicioPrensa">
+		<property name="periodicos">
+ 				<list>
+						<value>20 Minutos</value>
+						<value>El Mundo</value>
+						<value>El País</value>
+						<value>ABC</value>
+						<value>Diario 16</value>
+						<value>As</value>
+				</list>
+		</property>
+</bean> <!--Podemos hacer esto o con anotaciones-->
 
 </beans>
